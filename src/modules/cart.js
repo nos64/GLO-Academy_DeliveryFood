@@ -120,9 +120,9 @@ const cart = () => {
       const resCartArray = cartArray.map((artArray) => {
         return artArray.price * artArray.count;
       });
-      let sum = 0;
-      resCartArray.forEach((num) => {
-        sum += num;
+      // let sum = 0;
+      const sum = resCartArray.reduce((sum, num) => {
+        return sum + num;
       });
       // console.log(sum);
       modalPricetag.textContent = `${sum} ₽`;
